@@ -1,8 +1,18 @@
+.row style="margin-top:50px"
 - if @article.comments.present?
+  / -@article.comments.each do |comment|
+  /   .panel.panel-info
+  /     .panel-heading = comment.created_at
+  /     .panel-body = comment.content
+  /   br
   -@article.comments.each do |comment|
-    .panel.panel-info
-      .panel-heading = comment.created_at
-      .panel-body = comment.content
-    br
+    .comment
+      .media
+        a.pull-left href="#"
+          img.media-object src="/assets/none.png" alt="" width="50px" height="50px"
+        .media-body
+          h5.media-heading = comment.created_at
+          = comment.content
 - else
-  | 没有评论
+  .alert.alert-warning role="alert"
+    | 没有评论

@@ -1,10 +1,23 @@
-.panel.panel-success
-  .panel-heading
-    | 标题:
-    = @article.title
-  .panel-body
-    | 内容:
-    = @article.content
-= render 'new_comment'
-= render 'comment_list'
-
+/ .panel.panel-success
+/   .panel-heading
+/     | 标题:
+/     = @article.title
+/   .panel-body
+/     | 内容:
+/     = @article.content
+/ = render 'new_comment'
+/ = render 'comment_list'
+.articles.col-xs-8
+  .row.pull-right
+    span.glyphicon.glyphicon-calendar
+    label = @article.created_at
+  .row
+    .article_title
+      = link_to "#{@article.title}", show_article_website_home_path(@article.id)
+  .row style="border-bottom: dotted thin;"
+    p style="margin:30px" = @article.content
+  .row
+    = render 'new_comment'
+  .row style="border-bottom: dotted thin;"
+  .row
+    = render 'comment_list'

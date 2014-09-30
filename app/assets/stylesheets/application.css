@@ -13,3 +13,63 @@
  *= require bootstrap
  *= require_self
  */
+.sidebar{
+  background-color: #7733FF;
+  height: 100vh;
+  position: fixed;
+  bottom: 0;
+  top: 0;
+}
+.sidebar_font{
+  color: #dd88bb;
+  font-family: 'Comic Sans MS';
+  font-weight: 900;
+  font-size: 28px;
+}
+.sidebar_row_1{
+  height: 60%;
+}
+.sidebar_row_2{
+  height: 40%;
+  text-align:center;
+}
+.ul_pull{
+  margin-right:10px;
+}
+.intrduction{
+  margin-top: 10px;
+  font-size: 13px;
+}
+.content{
+  height: 100vh;
+}
+.title_font{
+  color: #7733FF;
+  font-family: 'Impact';
+  font-weight: 900;
+  font-size: 28px;
+}
+.read_font{
+  color: #7733FF;
+  font-family: 'Impact';
+  font-weight: 900;
+  font-size: 15px;
+}
+.articles{
+  margin-top: 10px;
+  margin-bottom: 30px;
+  margin-left: 20px;
+}
+a:link { text-decoration: none;}
+.article_title{
+  color: #7733FF;
+  font-family: 'Impact';
+  font-weight: 900;
+  font-size: 30px;
+  text-align: center;
+  margin-top: 50px;
+}
+.comment{
+  border-bottom: inset thin;
+  margin-top: 20px;
+}

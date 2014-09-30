@@ -16,4 +16,7 @@ class Website::HomeController < Website::ApplicationController
     Comment.create(content: params[:comment][:content], article_id: params[:id])
     redirect_to action: :show_article
   end
+
+  def about
+  end
 end

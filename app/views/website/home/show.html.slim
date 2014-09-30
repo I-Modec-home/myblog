@@ -1,11 +1,38 @@
+/ - if @category.articles.present?
+/   - @category.articles.each do |article|
+/     label 标题：
+/     = link_to "#{article.title}", show_article_website_home_path(article.id)
+/     br
+/     labrl 内容:
+/     = article.content
+/     hr
+/ - else
+/   | 没有文章哦!!!
+
 - if @category.articles.present?
   - @category.articles.each do |article|
-    label 标题：
-    = link_to "#{article.title}", show_article_website_home_path(article.id)
-    br
-    labrl 内容:
-    = article.content
-    hr
+    .articles.col-xs-8
+      .row.pull-right
+        span.glyphicon.glyphicon-calendar
+        label = article.created_at
+      .row
+        .title_font
+          = link_to "#{article.title}", show_article_website_home_path(article.id)
+      .row
+        span.glyphicon.glyphicon-tag style="margin-left:10px;"
+        = article.category.name
+      .row
+        p = article.content[0..200] + '... ...'
+      .row
+        span.read_font
+          label.glyphicon.glyphicon-arrow-right
+          = link_to "阅读全文", show_article_website_home_path(article.id)
+        .pull-right
+          span.glyphicon.glyphicon-comment style="margin-right:5px;"
+          label
+            = article.comments.count
+            | 条评论
 - else
-  | 没有文章哦!!!
+  .alert.alert-warning role="alert"
+    | 没有文章哦!!!
 

@@ -5,6 +5,9 @@ Rails.application.routes.draw do
         get :show_article
         post :create_comment
       end
+      collection do
+        get :about
+      end
     end
   end
 
@@ -15,7 +18,7 @@ Rails.application.routes.draw do
   end
 
   #root 路径
-  root 'backend/home#index'
+  root 'website/home#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

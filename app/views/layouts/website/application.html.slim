@@ -6,8 +6,12 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   body
-    .container
-      .col-md-3
-        = render 'website/home/sidebar'
-      .col-md-9
+    .col-xs-3.sidebar.sidebar_font
+      = render 'website/home/sidebar'
+    .col-xs-9.content.pull-right
+      .container style="margin-top:40px"
         = yield
+javascript:
+  $(document).ready(function(){
+    $(".img-circle").attr("src","/assets/xiaoxin.jpg")
+  });

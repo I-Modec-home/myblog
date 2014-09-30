@@ -1,4 +1,14 @@
-ul.nav.nav-pills.nav-stacked role="tablist"
-  li.active role="presentation" = link_to '回到后台', root_path
-  - @categories.each do |category|
-    li role="presentation" = link_to "#{category.name}", website_home_path(category.id)
+.row.sidebar_row_1
+  ul.nav.nav-pills.nav-stacked.pull-right.ul_pull role="tablist"
+    li.text-right role="presentation" = link_to 'Home', root_path
+    - @categories.each do |category|
+      li.text-right role="presentation" = link_to "#{category.name}", website_home_path(category.id)
+    li.text-right role="presentation" = link_to ' About Me', about_website_home_index_path
+.row.sidebar_row_2
+  .row
+    img src="" class="img-circle" width="150px" height="150px"
+  .row.intrduction.col-xs-12
+    p
+      | I am ricky, i am a ruby developer, i like ruby on rails.
+    p
+      | Skills: rails, ruby, bootstrap, css, javascript, ASP.NET, C# .....
